@@ -1,0 +1,5 @@
+.pageContainer {
+  max-width: 1200px; /* Adjust the value to your desired maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+}
