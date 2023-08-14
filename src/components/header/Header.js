@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "./navigation/Nav";
 import BannerContent from "./BannerContent";
 import Styles from "../../styles/Header.module.css";
 import HeroImage from "../../images/hero-image.webp";
