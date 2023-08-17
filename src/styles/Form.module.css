@@ -1,0 +1,54 @@
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.formSubRow {
+  width: 24%;
+  padding: 8px;
+}
+
+.form input {
+  width: 100%;
+  padding: 5px 5px;
+  border: solid 1px var(--secondary-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form label {
+  color: var(--secondary-color);
+  font-size: 0.8em;
+}
+
+.labelContainer {
+  color: white;
+}
+
+.btnContainer {
+  width: auto;
+  padding: 8px;
+}
+
+#submit {
+  padding: 5px 13px;
+  font-size: 0.9em;
+  margin: 0;
+  background: var(--orange);
+  border: none;
+  color: white;
+  border-radius: 11px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.closeForm {
+  font-size: 0.6em;
+}

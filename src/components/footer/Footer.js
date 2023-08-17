@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <section className={Styles.footer}>
       <BoxedPageTemplate>
-        <img src={Logo} alt="Ai Books - Quickbooks new app" width="80px" />
+        <article>
+          <img src={Logo} alt="Ai Books - Quickbooks new app" width="80px" />
+        </article>
       </BoxedPageTemplate>
     </section>
   );

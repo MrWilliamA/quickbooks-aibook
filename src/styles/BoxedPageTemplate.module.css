@@ -4,4 +4,5 @@
   margin: 0 auto;
   padding: 20px;
   z-index: 8;
+  box-sizing: border-box;
 }

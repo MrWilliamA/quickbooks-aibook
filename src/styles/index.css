@@ -35,10 +35,18 @@ code {
     monospace;
 }
 
-h1 {
-  font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3.5rem);
+h1,
+h2 {
   color: var(--secondary-color);
   margin: 4px;
+  font-weight: lighter;
+}
+h1 {
+  font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, -0.875rem + 3vw, 3rem);
 }
 
 p {
@@ -47,4 +55,8 @@ p {
 
 strong {
   color: var(--orange);
+}
+
+button {
+  font-family: "Open Sans", sans-serif;
 }
