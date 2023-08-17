@@ -1,0 +1,17 @@
+.heroText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heroText article {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.text {
+  color: var(--primary);
+}
+
+.form {
+}

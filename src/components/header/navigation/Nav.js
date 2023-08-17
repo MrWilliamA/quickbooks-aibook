@@ -1,16 +1,19 @@
-import Logo from "../../../images/ai-books-logo.png";
+import Logo from "../../../images/ai-books-logo.svg";
 import Styles from "../../../styles/Header.module.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ToggleDark from "../../ToggleDarkTheme";
 
-const Nav = () => {
+const Nav = ({ darkTheme, setDarkTheme }) => {
   return (
     <Router>
       <header className={Styles.header}>
         <nav className={Styles.logo}>
-          <img src={Logo} alt="ai books Logo" />
-          <h1>
+          <a href="/">
+            <img src={Logo} alt="ai books Logo" />
+          </a>
+          <p className={Styles.headerTitle}>
             <a href="/">AI BOOKS</a>
-          </h1>
+          </p>
         </nav>
         <ul className={Styles.navMenu}>
           <li>
@@ -26,6 +29,7 @@ const Nav = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <ToggleDark darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
         </ul>
       </header>
     </Router>

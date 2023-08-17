@@ -1,6 +1,6 @@
 import Styles from "../../styles/Footer.module.css";
 import BoxedPageTemplate from "../../templates/BoxedPageTemplate";
-import Logo from "../../images/ai-books-logo.png";
+import Logo from "../../images/ai-books-logo.svg";
 
 const Footer = () => {
   return (

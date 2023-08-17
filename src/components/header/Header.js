@@ -1,18 +1,17 @@
 import Nav from "./navigation/Nav";
 import BannerContent from "./BannerContent";
-import Styles from "../../styles/Header.module.css";
 import HeroImage from "../../images/hero-image.webp";
+import Styles from "../../styles/Header.module.css";
 
-const Header = () => {
+const Header = ({ darkTheme, setDarkTheme }) => {
   const heroImage = {
     backgroundImage: `url(${HeroImage})`,
-    minHeight: "75vh",
   };
 
   return (
-    <section style={heroImage}>
+    <section style={heroImage} className={Styles.heroSection}>
       <div className={Styles.overlay}></div>
-      <Nav />
+      <Nav darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <BannerContent />
     </section>
   );
