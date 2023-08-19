@@ -24,7 +24,7 @@
   border: none;
   color: white;
   border-radius: 11px;
-  font-size: clamp(0.8rem, -0.875rem + 4vw, 1.15rem);
+  font-size: clamp(0.8rem, -0.875rem + 3vw, 1.15rem);
   font-weight: 200;
   cursor: pointer;
 }
@@ -58,5 +58,11 @@
     width: 100%;
     max-width: 600px;
     margin: 25px auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .btnRow {
+    flex-direction: column;
   }
 }

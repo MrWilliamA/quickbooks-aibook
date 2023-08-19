@@ -3,8 +3,6 @@
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  position: relative;
-  top: -4px;
   background-color: var(--background);
   border: solid 1px var(--secondary-color);
   cursor: pointer;

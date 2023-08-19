@@ -15,22 +15,19 @@
   position: sticky;
   z-index: 9;
   top: 0;
-  background: linear-gradient(
-    var(--secondary-color-low-opacity) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(var(--primary-color) 0%, transparent 100%);
   background-repeat: no-repeat;
 }
 
-.header .mobile {
+.header.mobile.open {
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.header.light.mobile {
-  background: var(--primary-color);
-}
-
-.header.mobile.dark {
+.header.light.mobile,
+.header.mobile.dark,
+.scrolled {
   background: var(--primary-color);
 }
 
@@ -63,6 +60,7 @@
 .LogoContainer {
   max-width: 33%;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -98,10 +96,12 @@
 .navMenu a {
   padding: 5px 12px;
   display: block;
+  font-weight: bold;
 }
 
 .navMenu li {
   border-bottom: solid 2px transparent;
+  margin-right: 10px;
 }
 
 .navMenu li:hover {

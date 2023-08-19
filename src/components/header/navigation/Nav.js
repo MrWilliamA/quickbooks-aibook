@@ -8,6 +8,7 @@ import { BiMenu } from "react-icons/bi";
 const Nav = ({ darkTheme, setDarkTheme }) => {
   const [menuOpen, setMenuOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -30,14 +31,35 @@ const Nav = ({ darkTheme, setDarkTheme }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const headerClasses = [
+    Styles.header,
+    darkTheme === "light" ? Styles.light : Styles.dark,
+    isMobile ? Styles.mobile : "",
+    !menuOpen ? Styles.open : "",
+    isScrolled ? Styles.scrolled : "",
+  ].join(" ");
+
   return (
     <Router>
-      <header
-        className={`${Styles.header} ${
-          darkTheme === "light" ? Styles.light : Styles.dark
-        }
-        ${isMobile ? Styles.mobile : Styles.desktop}`}
-      >
+      <header className={headerClasses}>
         <nav
           className={`${Styles.logo} ${
             darkTheme === "light" ? Styles.light : Styles.dark
