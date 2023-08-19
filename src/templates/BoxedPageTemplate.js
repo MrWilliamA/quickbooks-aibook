@@ -1,4 +1,4 @@
-import Styles from "../styles/BoxedPageTemplate.module.css";
+import Styles from "./BoxedPageTemplate.module.css";
 
 const PageTemplate = ({ children }) => {
   const backgroundOverlay = {

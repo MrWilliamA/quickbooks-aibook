@@ -1,5 +1,5 @@
 import BoxedPageTemplate from "../../templates/BoxedPageTemplate";
-import Styles from "../../styles/BannerContent.module.css";
+import Styles from "./BannerContent.module.css";
 import infographic from "../../images/infographic.png";
 import WelcomeModal from "../WelcomeModal/WelcomeModal";
 import Form from "../form/Form";
@@ -7,7 +7,6 @@ import { useState } from "react";
 
 const HeroBanner = ({ darkTheme }) => {
   const [interested, setInterested] = useState(false);
-  const [notInterested, setNotInterested] = useState(true);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -17,12 +16,15 @@ const HeroBanner = ({ darkTheme }) => {
   });
 
   const handleBtnClick = (event) => {
-    if (event.target.innerText === "Not Interested") {
-      setNotInterested(false);
+    if (event.target.innerText === "Tell Me More!") {
+      setInterested(true);
+      setIsFormSubmitted(false);
+    } else if (event.target.innerText === "Not Interested") {
       setInterested(false);
-    } else if (event.target === event.currentTarget) {
-      setInterested(!interested);
-      setNotInterested(true);
+      setIsFormSubmitted(true);
+    } else if (event.target.innerText === "Close Form") {
+      setInterested(false);
+      setIsFormSubmitted(false);
     }
   };
 
@@ -66,19 +68,22 @@ const HeroBanner = ({ darkTheme }) => {
             ""
           )}
 
-          {notInterested ? "" : "Can't win 'em all, maybe next time!"}
-
           {isFormSubmitted ? (
             <WelcomeModal
               firstName={formData.firstName}
               setIsFormSubmitted={setIsFormSubmitted}
+              interested={interested}
             />
           ) : (
             ""
           )}
         </article>
-        <article className={Styles.form}>
-          <img src={infographic} alt="infographic information" />
+        <article>
+          <img
+            src={infographic}
+            alt="infographic information"
+            className={Styles.img}
+          />
         </article>
       </section>
     </BoxedPageTemplate>

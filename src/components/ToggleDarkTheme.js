@@ -1,5 +1,5 @@
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import Styles from "../styles/DarkTheme.module.css";
+import Styles from "./DarkTheme.module.css";
 
 const ToggleDark = ({ darkTheme, setDarkTheme }) => {
   const switchTheme = () => {

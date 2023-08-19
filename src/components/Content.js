@@ -1,5 +1,5 @@
 import BoxedPageTemplate from "../templates/BoxedPageTemplate";
-import Styles from "../styles/Content.module.css";
+import Styles from "./Content.module.css";
 
 const Content = () => {
   return (

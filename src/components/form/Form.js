@@ -1,4 +1,4 @@
-import Styles from "../../styles/Form.module.css";
+import Styles from "./Form.module.css";
 
 const Form = ({ setFormData, setIsFormSubmitted }) => {
   const handleInputChange = (event) => {
@@ -19,12 +19,7 @@ const Form = ({ setFormData, setIsFormSubmitted }) => {
   };
 
   return (
-    <form
-      method="POST"
-      //   action="https://getform.io/f/82cf8ca4-1827-415a-b9be-cd34e8bd662f"
-      onSubmit={handleSubmit}
-      className={Styles.form}
-    >
+    <form method="POST" onSubmit={handleSubmit} className={Styles.form}>
       <div className={Styles.formSubRow}>
         <label for="firstName">First Name:</label>
         <input

@@ -8,6 +8,7 @@
   background-color: var(--background);
   border: solid 1px var(--secondary-color);
   cursor: pointer;
+  margin: auto;
 }
 
 .btn svg {

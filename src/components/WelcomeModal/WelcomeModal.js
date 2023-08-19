@@ -1,6 +1,6 @@
-import Style from "../../styles/WelcomeModal.module.css";
+import Style from "./WelcomeModal.module.css";
 
-const WelcomeModal = ({ firstName, setIsFormSubmitted }) => {
+const WelcomeModal = ({ firstName, setIsFormSubmitted, interested }) => {
   const handleClick = () => {
     setIsFormSubmitted(false);
   };
@@ -8,7 +8,14 @@ const WelcomeModal = ({ firstName, setIsFormSubmitted }) => {
   return (
     <modal className={Style.module}>
       <p className={Style.text}>
-        Great to have you onboard, <strong>{firstName}</strong>!
+        {interested ? (
+          <>
+            Great to have you onboard,
+            <strong className="bold-text"> {firstName}</strong>!
+          </>
+        ) : (
+          "Can't win 'em all, maybe next time!"
+        )}
       </p>
       <button onClick={handleClick} className={Style.close}>
         CLOSE
