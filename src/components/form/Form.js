@@ -12,7 +12,7 @@ const Form = ({ setFormData, setIsFormSubmitted }) => {
       [name]: sanitizedValue,
     }));
   };
-
+  //handle form subit
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsFormSubmitted(true);

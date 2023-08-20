@@ -4,6 +4,7 @@ import Content from "./components/Content";
 import useLocalStorage from "use-local-storage";
 
 function App() {
+  //set dark/light theme and save to local storage
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [darkTheme, setDarkTheme] = useLocalStorage(
     "theme",

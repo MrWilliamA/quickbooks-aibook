@@ -1,6 +1,7 @@
 import Style from "./WelcomeModal.module.css";
 
 const WelcomeModal = ({ firstName, setIsFormSubmitted, interested }) => {
+  // Close the modal
   const handleClick = () => {
     setIsFormSubmitted(false);
   };

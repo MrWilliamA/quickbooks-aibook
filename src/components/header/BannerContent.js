@@ -15,6 +15,7 @@ const HeroBanner = ({ darkTheme }) => {
     email: "",
   });
 
+  //handle submit for all three form buttons.
   const handleBtnClick = (event) => {
     if (event.target.innerText === "Tell Me More!") {
       setInterested(true);

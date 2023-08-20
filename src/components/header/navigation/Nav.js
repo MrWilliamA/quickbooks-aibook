@@ -16,13 +16,12 @@ const Nav = ({ darkTheme, setDarkTheme }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 768);
     };
 
     // Initial check on mount
     handleResize();
 
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
     // Cleanup
@@ -40,7 +39,7 @@ const Nav = ({ darkTheme, setDarkTheme }) => {
       }
     };
 
-    // Attach the scroll event listener
+    // Attach the scroll event listener to change header background color on scroll
     window.addEventListener("scroll", handleScroll);
 
     // Clean up the event listener on component unmount

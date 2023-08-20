@@ -3,8 +3,5 @@
   display: flex;
   justify-content: space-between;
   border-top: white 1px solid;
-}
-
-.footer article {
   text-align: center;
 }
