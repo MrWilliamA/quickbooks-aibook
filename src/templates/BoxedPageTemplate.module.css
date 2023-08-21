@@ -5,4 +5,5 @@
   padding: 20px;
   z-index: 8;
   box-sizing: border-box;
+  background: linear-gradient(transparent 0%, var(--primary-color) 75%);
 }
