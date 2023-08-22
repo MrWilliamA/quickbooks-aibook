@@ -1,9 +1,13 @@
-import BoxedPageTemplate from "../../templates/BoxedPageTemplate";
+import BoxedPageTemplate from "../../../templates/BoxedPageTemplate";
 import Styles from "./BannerContent.module.css";
-import infographic from "../../images/infographic.png";
-import WelcomeModal from "../WelcomeModal/WelcomeModal";
-import Form from "../form/Form";
+import infographic from "../../../images/infographic.png";
+import WelcomeModal from "../../WelcomeModal/WelcomeModal";
+import Form from "../../form/Form";
 import { useState } from "react";
+import Button from "../button/Button";
+import FadeIn from "react-fade-in";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 const HeroBanner = ({ darkTheme }) => {
   const [interested, setInterested] = useState(false);
@@ -42,47 +46,50 @@ const HeroBanner = ({ darkTheme }) => {
             tellus ac, viverra ultricies justo.
           </p>
           <div className={Styles.btnRow}>
-            <button onClick={handleBtnClick} className={Styles.button}>
-              Tell Me More!
-            </button>
-            <button onClick={handleBtnClick} className={Styles.button}>
-              Not Interested
-            </button>
+            <Button text="Tell Me More!" handleBtnClick={handleBtnClick} />
+            <Button text="Not Interested" handleBtnClick={handleBtnClick} />
             {interested ? (
-              <button onClick={handleBtnClick} className={Styles.button}>
-                Close Form
-              </button>
+              <FadeIn>
+                <Button text="Close Form" handleBtnClick={handleBtnClick} />
+              </FadeIn>
             ) : (
               ""
             )}
           </div>
 
           {interested ? (
-            <div onClick={handleBtnClick}>
-              <Form
-                formData={formData}
-                setFormData={setFormData}
-                setIsFormSubmitted={setIsFormSubmitted}
-              />
+            <div className={Styles.formContainer}>
+              <FadeIn transitionDuration={800}>
+                <Form
+                  formData={formData}
+                  setFormData={setFormData}
+                  setIsFormSubmitted={setIsFormSubmitted}
+                />
+              </FadeIn>
             </div>
           ) : (
             ""
           )}
 
           {isFormSubmitted ? (
-            <WelcomeModal
-              firstName={formData.firstName}
-              setIsFormSubmitted={setIsFormSubmitted}
-              interested={interested}
-            />
+            <div className={Styles.modalContainer}>
+              <FadeIn transitionDuration={800}>
+                <WelcomeModal
+                  firstName={formData.firstName}
+                  setIsFormSubmitted={setIsFormSubmitted}
+                  interested={interested}
+                />
+              </FadeIn>
+            </div>
           ) : (
             ""
           )}
         </article>
         <article>
-          <img
+          <LazyLoadImage
             src={infographic}
             alt="infographic information"
+            effect="opacity"
             className={Styles.img}
           />
         </article>

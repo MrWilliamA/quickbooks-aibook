@@ -21,7 +21,7 @@ const Form = ({ setFormData, setIsFormSubmitted }) => {
   return (
     <form method="POST" onSubmit={handleSubmit} className={Styles.form}>
       <div className={Styles.formSubRow}>
-        <label for="firstName">First Name:</label>
+        <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
           placeholder="Enter First Name"
@@ -31,7 +31,7 @@ const Form = ({ setFormData, setIsFormSubmitted }) => {
         />
       </div>
       <div className={Styles.formSubRow}>
-        <label for="LastName">Last Name:</label>
+        <label htmlFor="LastName">Last Name:</label>
         <input
           type="text"
           placeholder="Enter Last Name"
@@ -40,7 +40,7 @@ const Form = ({ setFormData, setIsFormSubmitted }) => {
         />
       </div>
       <div className={Styles.formSubRow}>
-        <label for="email">Email:</label>
+        <label htmlFor="email">Email:</label>
         <input type="email" placeholder="Enter Email" name="email" required />
       </div>
       <div className={Styles.btnContainer}>

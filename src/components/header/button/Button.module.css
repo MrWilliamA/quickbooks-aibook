@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 5px;
+  background: var(--orange);
+  border: none;
+  color: white;
+  border-radius: 11px;
+  font-size: clamp(0.8rem, -0.875rem + 3vw, 1.15rem);
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}

@@ -1,4 +1,5 @@
 import Style from "./WelcomeModal.module.css";
+import FadeIn from "react-fade-in";
 
 const WelcomeModal = ({ firstName, setIsFormSubmitted, interested }) => {
   // Close the modal
@@ -7,7 +8,7 @@ const WelcomeModal = ({ firstName, setIsFormSubmitted, interested }) => {
   };
 
   return (
-    <modal className={Style.module}>
+    <dialog className={Style.module}>
       <p className={Style.text}>
         {interested ? (
           <>
@@ -21,7 +22,7 @@ const WelcomeModal = ({ firstName, setIsFormSubmitted, interested }) => {
       <button onClick={handleClick} className={Style.close}>
         CLOSE
       </button>
-    </modal>
+    </dialog>
   );
 };
 
